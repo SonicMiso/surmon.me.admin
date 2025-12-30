@@ -75,7 +75,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           title: '用户',
           dataIndex: 'author_type',
           render: (_, vote) => (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <UniversalText
                 prefix={<Icons.MehOutlined />}
                 text={getVoteAuthorTypeText(vote.author_type)}
@@ -101,7 +101,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'ip',
           render(_, vote) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <UniversalText
                   prefix={<Icons.GlobalOutlined />}
                   text={vote.ip}
@@ -121,7 +121,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'user_agent',
           render(_, vote) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <UniversalText
                   prefix={<Icons.CompassOutlined />}
                   text={parseBrowser(vote.user_agent!)}
@@ -143,7 +143,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'created_at',
           render(_, vote) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Space size="small">
                   <UniversalText
                     prefix={<Icons.LaptopOutlined />}

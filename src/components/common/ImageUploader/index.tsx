@@ -31,7 +31,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (props) => {
   const uploader = useUploader()
   const uploadFile = (file: File) => {
     notification.info({
-      message: i18n.t('component.image_uploader.state.start'),
+      title: i18n.t('component.image_uploader.state.start'),
       description: file.name
     })
 
@@ -40,13 +40,13 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (props) => {
       .then((result) => {
         props.onChange?.(result.url)
         notification.success({
-          message: i18n.t('component.image_uploader.state.succeeded'),
+          title: i18n.t('component.image_uploader.state.succeeded'),
           description: result.key
         })
       })
       .catch((error) => {
         notification.error({
-          message: i18n.t('component.image_uploader.state.failed'),
+          title: i18n.t('component.image_uploader.state.failed'),
           description:
             error.code === UploadErrorCode.Failure
               ? String(error.error?.message ?? error.error)
@@ -56,7 +56,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (props) => {
   }
 
   return (
-    <Space direction="vertical" className={styles.imageUploader}>
+    <Space orientation="vertical" className={styles.imageUploader}>
       <Upload
         name="file"
         listType="picture-card"
@@ -74,7 +74,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (props) => {
         {props.value ? (
           <img className={styles.image} src={props.value} alt={props.value} />
         ) : (
-          <Space className={styles.tigger} direction="vertical" align="center" size="small">
+          <Space className={styles.tigger} orientation="vertical" align="center" size="small">
             {uploader?.uploading.state.value ? <Icons.LoadingOutlined /> : <Icons.PlusOutlined />}
             {uploader?.uploading.state.value ? 'UPLOADING...' : 'UPLOAD'}
           </Space>

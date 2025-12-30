@@ -70,7 +70,7 @@ export const DashboardPage: React.FC = () => {
   })
 
   return (
-    <Space direction="vertical" size={APP_LAYOUT_SPACE_SIZE} className={styles.dashboardPage}>
+    <Space orientation="vertical" size={APP_LAYOUT_SPACE_SIZE} className={styles.dashboardPage}>
       <Row gutter={[APP_LAYOUT_GUTTER_SIZE, APP_LAYOUT_GUTTER_SIZE]}>
         {statisticsCardsElements.map((statisticsCard, index) => (
           <Col xs={24} md={12} lg={6} key={index}>
@@ -123,7 +123,7 @@ export const DashboardPage: React.FC = () => {
                   optionType="button"
                   size="small"
                 />
-                <Divider type="vertical" />
+                <Divider orientation="vertical" />
                 <Button
                   size="small"
                   loading={analyticsFetching.state}

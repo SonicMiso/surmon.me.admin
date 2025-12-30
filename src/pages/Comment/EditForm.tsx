@@ -53,7 +53,7 @@ export const EditForm: React.FC<EditFormProps> = (props) => {
       <Form.Item label="ID">
         <Space size="small">
           <Typography.Text copyable={true}>{props.comment?.id}</Typography.Text>
-          <Divider type="vertical" />
+          <Divider orientation="vertical" />
           <Typography.Text copyable={true}>{props.comment?._id}</Typography.Text>
         </Space>
       </Form.Item>
@@ -115,16 +115,16 @@ export const EditForm: React.FC<EditFormProps> = (props) => {
       </Form.Item>
       <Form.Item label="终端">
         <UniversalText text={parseBrowser(props.comment?.agent!)} placeholder="未知浏览器" />
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <UniversalText text={parseOS(props.comment?.agent!)} placeholder="未知系统" />
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <UniversalText text={parseDevice(props.comment?.agent!)} placeholder="未知设备" />
       </Form.Item>
       <Form.Item name="likes" label="被赞" rules={[{ required: true, message: '必填' }]}>
-        <InputNumber addonBefore={<Icons.LikeOutlined />} placeholder="多少" />
+        <InputNumber suffix={<Icons.LikeOutlined />} min={0} placeholder="多少" />
       </Form.Item>
       <Form.Item name="dislikes" label="被踩" rules={[{ required: true, message: '必填' }]}>
-        <InputNumber addonBefore={<Icons.DislikeOutlined />} placeholder="多少" />
+        <InputNumber suffix={<Icons.DislikeOutlined />} min={0} placeholder="多少" />
       </Form.Item>
       <Form.Item label="宿主页面">
         <Button
@@ -136,7 +136,7 @@ export const EditForm: React.FC<EditFormProps> = (props) => {
           {props.comment?.post_id === COMMENT_GUESTBOOK_POST_ID
             ? '留言板'
             : (commentArticle.value?.title ?? '加载中⋯')}
-          <Divider type="vertical" />
+          <Divider orientation="vertical" />
           <span>#{props.comment?.id}</span>
         </Button>
       </Form.Item>

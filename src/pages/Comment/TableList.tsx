@@ -67,7 +67,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           title: '评论内容',
           dataIndex: 'content',
           render: (_, comment) => (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <Typography.Paragraph
                 className={styles.commentContent}
                 ellipsis={{ rows: 5, expandable: true }}
@@ -84,12 +84,12 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'author',
           render(_, comment) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Space>
-                  <CommentAvatar comment={comment} />
+                  <CommentAvatar comment={comment} size={28} />
                   <UniversalText text={comment.author.name} />
                 </Space>
-                <Space direction="vertical" size="small">
+                <Space orientation="vertical" size="small">
                   <UniversalText
                     placeholder="Left blank"
                     prefix={<Icons.MailOutlined />}
@@ -119,7 +119,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           minWidth: 200,
           render(_, comment) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <UniversalText
                   prefix={<Icons.GlobalOutlined />}
                   text={comment.ip}
@@ -162,7 +162,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           render: (_, comment) => {
             const state = getCommentState(comment.state)
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Tag icon={state.icon} color={state.color}>
                   {state.name}
                 </Tag>
@@ -187,7 +187,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           width: 110,
           dataIndex: 'actions',
           render: (_, comment, index) => (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <Button
                 size="small"
                 type="text"

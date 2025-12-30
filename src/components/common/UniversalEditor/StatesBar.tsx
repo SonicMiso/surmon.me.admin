@@ -35,19 +35,19 @@ export const EditorStatesBar: React.FC<EditorStatesBarProps> = (props) => {
           <span> </span>
           {props.states?.length}
         </Typography.Text>
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <Typography.Text type="secondary" className={styles.text}>
           <Trans i18nKey="component.universal_editor.state.line_count" />
           <span> </span>
           {props.states?.lineCount}
         </Typography.Text>
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <Typography.Text type="secondary" className={styles.text}>
           <Trans i18nKey="component.universal_editor.state.selected_count" />
           <span> </span>
           {props.states?.selectedCount}
         </Typography.Text>
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <Typography.Text type="secondary" className={styles.text}>
           <Trans i18nKey="component.universal_editor.state.selected_length" />
           <span> </span>

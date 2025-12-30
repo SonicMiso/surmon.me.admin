@@ -4,9 +4,9 @@
  */
 
 import classnames from 'classnames'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router'
-import { Spin, Input } from 'antd'
+import { Spin, Input, InputRef } from 'antd'
 import * as Icons from '@ant-design/icons'
 import { RoutesKey, RoutesPath } from '@/routes'
 import { authLogin } from '@/apis/admin'
@@ -16,6 +16,7 @@ import styles from './style.module.less'
 
 export const HelloPage: React.FC = () => {
   const navigate = useNavigate()
+  const inputRef = useRef<InputRef>(null)
   const [inputValue, setInputValue] = useState('')
   const [isInputing, setInputing] = useState(false)
   const [isLoggingIn, setLoggingIn] = useState(false)
@@ -32,6 +33,7 @@ export const HelloPage: React.FC = () => {
       navigate(RoutesPath[RoutesKey.Dashboard])
     } catch (error) {
       console.warn('Login failed！', error)
+      inputRef.current?.focus({ cursor: 'all' })
     } finally {
       setLoggingIn(false)
     }
@@ -57,7 +59,9 @@ export const HelloPage: React.FC = () => {
 
   const passwordInput = (
     <Input.Password
-      className={styles.input}
+      ref={inputRef}
+      className={styles.inputWrapper}
+      classNames={{ input: styles.input }}
       id="password"
       size="large"
       autoComplete="off"

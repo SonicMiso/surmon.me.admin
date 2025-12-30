@@ -6,16 +6,24 @@
   margin-bottom: 0 !important;
 }
 
-.avatarBadge {
-  .avatarBadgeIconWrapper {
+.avatarWrapper {
+  display: inline-block;
+  position: relative;
+
+  .avatarBadge {
     @size: 22px;
     width: @size;
     height: @size;
     border-radius: 100%;
-    background: white;
+    background: @module-background;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate((@size / 2), -(@size / 2));
 
     .avatarBadgeIcon {
       width: 16px;

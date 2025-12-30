@@ -23,7 +23,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'id',
           width: 160,
           render: (_, item) => (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <UniversalText text={item.id} copyable={true} type="secondary" />
               <UniversalText text={item.thread} copyable={true} />
             </Space>
@@ -51,7 +51,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
             return (
               <Space>
                 <Avatar size={38} shape="square" src={item.author.avatar.cache} />
-                <Space direction="vertical" size="small">
+                <Space orientation="vertical" size="small">
                   <strong>{item.author.name}</strong>
                   <Placeholder data={item.author.url}>
                     {(url) => (

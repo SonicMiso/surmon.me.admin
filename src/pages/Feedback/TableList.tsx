@@ -99,7 +99,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'agent',
           render(_, feedback) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Popover
                   title="终端信息"
                   placement="left"
@@ -165,7 +165,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           width: 120,
           dataIndex: 'actions',
           render: (_, feedback, index) => (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <Button
                 size="small"
                 type="text"

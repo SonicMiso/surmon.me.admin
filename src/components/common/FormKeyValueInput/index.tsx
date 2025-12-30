@@ -17,7 +17,7 @@ export interface FormKeyValueInputProps {
 export const FormKeyValueInput: React.FC<FormKeyValueInputProps> = (props) => (
   <Form.List name={props.fieldName}>
     {(extendsData, { add, remove }) => (
-      <Space direction="vertical" size="middle" className={styles.inputWrapper}>
+      <Space orientation="vertical" size="middle" className={styles.inputWrapper}>
         {extendsData.map((extend) => (
           <Space size="middle" key={extend.name} className={styles.inputGroup}>
             <Form.Item noStyle={true} required={true} name={[extend.name, 'name']}>

@@ -68,7 +68,7 @@ export const GeneralForm: React.FC<GeneralFormProps> = (props) => {
       >
         <Form.Item label>
           <Statistic
-            valueStyle={{ fontWeight: 'bold' }}
+            styles={{ content: { fontWeight: 'bold' } }}
             value={data.value?.meta.likes}
             title="站点累计被喜欢"
             suffix="次"

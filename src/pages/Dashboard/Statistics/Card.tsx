@@ -16,11 +16,11 @@ export const StatisticCard: React.FC<StatisticCardProps> = (props) => (
   <Card variant="borderless" className={styles.statisticCard}>
     <Flex justify="space-between">
       <Statistic
-        valueStyle={{ fontWeight: 'bold' }}
         loading={props.loading}
         title={props.title}
         value={props.value}
         suffix={props.suffix}
+        styles={{ content: { fontWeight: 'bold' } }}
       />
       <div className={styles.icon}>{props.icon}</div>
     </Flex>

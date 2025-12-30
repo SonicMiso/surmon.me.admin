@@ -33,7 +33,7 @@ export const DropdownMenu: React.FC<React.PropsWithChildren<ButtonMenuProps>> = 
         }))
       }}
     >
-      <Button disabled={props.disabled} icon={<Icons.DownOutlined />} iconPosition="end">
+      <Button disabled={props.disabled} icon={<Icons.DownOutlined />} iconPlacement="end">
         {props.text ?? props.children}
       </Button>
     </Dropdown>

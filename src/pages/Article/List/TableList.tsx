@@ -97,7 +97,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'tags',
           render(_, article) {
             return (
-              <Space direction="vertical" size="small" wrap>
+              <Space orientation="vertical" size="small" wrap>
                 {article.tags.map((tag) => (
                   <Tag
                     key={tag._id}
@@ -118,7 +118,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'meta',
           render(_, article) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Space size="small">
                   <Icons.EyeOutlined />
                   浏览 {numberToKilo(article.meta?.views ?? 0)} 次
@@ -141,7 +141,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'created_at',
           render(_, article) {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <div>
                   分类：
                   {article.categories.map((category, index) => (
@@ -149,7 +149,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
                       <Typography.Link onClick={() => props.onClickCategory(category)}>
                         {category.name}
                       </Typography.Link>
-                      {article.categories[index + 1] ? <Divider type="vertical" /> : ''}
+                      {article.categories[index + 1] ? <Divider orientation="vertical" /> : ''}
                     </span>
                   ))}
                 </div>
@@ -165,7 +165,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           dataIndex: 'state',
           render: (_, article) => {
             return (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 {[
                   getArticlePublish(article.state),
                   getArticlePublic(article.public),
@@ -184,7 +184,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
           width: 110,
           dataIndex: 'actions',
           render: (_, article) => (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <Link to={RoutesPather.articleDetail(article._id!)}>
                 <Button size="small" type="text" block={true} icon={<Icons.EditOutlined />}>
                   文章详情

@@ -147,7 +147,7 @@ export const DisqusThreadsPage: React.FC = () => {
             key: 'title',
             render: (_, item) => {
               return (
-                <Space direction="vertical">
+                <Space orientation="vertical">
                   <Typography.Link
                     href={`https://disqus.com/home/discussion/${item.forum}/${item.slug}/`}
                     target="_blank"
@@ -166,7 +166,7 @@ export const DisqusThreadsPage: React.FC = () => {
             title: 'ID / Author',
             key: 'id',
             render: (_, item) => (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Typography.Text copyable={true}>{item.id}</Typography.Text>
                 <Typography.Text copyable={true} type="secondary">
                   {item.author}
@@ -178,7 +178,7 @@ export const DisqusThreadsPage: React.FC = () => {
             title: 'Identifiers / Time',
             key: 'identifiers',
             render: (_, item) => (
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Space>
                   {item.identifiers.map((i: any) => (
                     <Tag key={i}>{i}</Tag>

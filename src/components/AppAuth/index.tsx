@@ -54,7 +54,7 @@ export const AppAuth: React.FC<React.PropsWithChildren> = (props) => {
     } catch (error) {
       console.debug('Invalid token, need to log in again.', error)
       notification.info({
-        message: i18n.t('login.invalid_token_message_title'),
+        title: i18n.t('login.invalid_token_message_title'),
         description: i18n.t('login.invalid_token_message_description')
       })
       removeToken()
@@ -75,7 +75,7 @@ export const AppAuth: React.FC<React.PropsWithChildren> = (props) => {
           className={styles.appLoading}
           style={isLogined ? LOADING_ANIMATED_STYLE : {}}
         >
-          <Space direction="vertical" align="center">
+          <Space orientation="vertical" align="center">
             <Spin indicator={<Loading3QuartersOutlined spin style={{ fontSize: 48 }} />} />
             <Typography.Text type="secondary">
               {verifying ? i18n.t('login.verifying_token') : i18n.t('login.initializing')}

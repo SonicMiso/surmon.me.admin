@@ -56,7 +56,7 @@ nodepress.interceptors.request.use((config) => {
     config.headers[APP_AUTH_HEADER_KEY] = `Bearer ${token.getToken()}`
   } else if (config.url !== ADMIN_AUTH_API_PATHS.LOGIN) {
     notification.error({
-      message: i18n.t('nodepress.request.invalid_token.title'),
+      title: i18n.t('nodepress.request.invalid_token.title'),
       description: i18n.t('nodepress.request.invalid_token.description'),
       duration: 2
     })
@@ -69,7 +69,7 @@ nodepress.interceptors.response.use(
   (response) => {
     if (!response.headers['content-type']?.includes('json')) {
       notification.success({
-        message: i18n.t('nodepress.response.success'),
+        title: i18n.t('nodepress.response.success'),
         description: response.statusText,
         duration: 2
       })
@@ -78,7 +78,7 @@ nodepress.interceptors.response.use(
 
     if (response.data.status === ResponseStatus.Success) {
       notification.success({
-        message: i18n.t('nodepress.response.success'),
+        title: i18n.t('nodepress.response.success'),
         description: response.data.message,
         duration: 2
       })
@@ -91,7 +91,7 @@ nodepress.interceptors.response.use(
     console.debug('axios error:', error)
 
     notification.error({
-      message: error.response?.data.error ?? error.response?.statusText ?? error.message,
+      title: error.response?.data.error ?? error.response?.statusText ?? error.message,
       description: error.response?.data.message ?? '-',
       duration: 3
     })

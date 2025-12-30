@@ -89,7 +89,7 @@ export const GoogleAnalyticsOverview: React.FC<GoogleAnalyticsOverviewProps> = (
   return (
     <Flex gap="large">
       <ECharts options={chartConfig} style={{ width: '100%', height: props.chartHeight }} />
-      <Space direction="vertical" size="small" style={{ width: 120 }}>
+      <Space orientation="vertical" size="small" style={{ width: 120 }}>
         <Statistic
           value={dataSet.totalUsers}
           title={

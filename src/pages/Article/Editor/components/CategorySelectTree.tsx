@@ -49,7 +49,7 @@ export const CategorySelectTree: React.FC<CategorySelectTreeProps> = (props) => 
         return (
           <Space size="small">
             <Typography.Text strong={true}>{category.name}</Typography.Text>
-            <Divider type="vertical" />
+            <Divider orientation="vertical" />
             {category.slug}
           </Space>
         )

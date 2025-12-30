@@ -160,7 +160,7 @@ export const FeedbackPage: React.FC = () => {
         onPaginate={(page, pageSize) => fetchList({ page, per_page: pageSize })}
       />
       <Drawer
-        width="46rem"
+        size="large"
         title="反馈详情"
         destroyOnHidden={true}
         open={isEditDrawerOpen.value}

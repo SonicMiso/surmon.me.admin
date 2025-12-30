@@ -31,12 +31,12 @@ export const TreeList: React.FC<TreeListProps> = (props) => {
                 <Icons.LineOutlined />
               </div>
             )}
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <Space size="small">
                 <Typography.Text strong={true}>{category.name}</Typography.Text>
-                <Divider type="vertical" />
+                <Divider orientation="vertical" />
                 <Typography.Text type="secondary">{category.slug}</Typography.Text>
-                <Divider type="vertical" />
+                <Divider orientation="vertical" />
                 <Typography.Text type="secondary">{category.article_count} 篇</Typography.Text>
               </Space>
               <UniversalText type="secondary" text={category.description} />
@@ -50,7 +50,7 @@ export const TreeList: React.FC<TreeListProps> = (props) => {
               >
                 编辑
               </Button>
-              <Divider type="vertical" />
+              <Divider orientation="vertical" />
               <Button
                 size="small"
                 type="text"
@@ -60,7 +60,7 @@ export const TreeList: React.FC<TreeListProps> = (props) => {
               >
                 删除
               </Button>
-              <Divider type="vertical" />
+              <Divider orientation="vertical" />
               <Button
                 size="small"
                 icon={<Icons.ExportOutlined />}

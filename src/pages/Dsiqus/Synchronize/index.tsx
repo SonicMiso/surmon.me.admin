@@ -11,7 +11,7 @@ import { NodePresstoDisqus } from './NodePresstoDisqus'
 
 export const DisqusSynchronizePage: React.FC = () => {
   return (
-    <Space direction="vertical" size={APP_LAYOUT_SPACE_SIZE} style={{ width: '100%' }}>
+    <Space orientation="vertical" size={APP_LAYOUT_SPACE_SIZE} style={{ width: '100%' }}>
       <Card title="Synchronize NodePress to Disqus" variant="borderless">
         <NodePresstoDisqus />
       </Card>

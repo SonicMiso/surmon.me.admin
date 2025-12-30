@@ -12,7 +12,7 @@ import { SortTypeWithHot } from '@/constants/sort'
 import { SortSelect } from '@/components/common/SortSelect'
 
 export interface CommentDrawerProps {
-  width?: DrawerProps['width']
+  size?: DrawerProps['size']
   open: boolean
   articleId: number
   commentCount: number
@@ -69,7 +69,7 @@ export const CommentDrawer: React.FC<CommentDrawerProps> = (props) => {
 
   return (
     <Drawer
-      width={props.width}
+      size={props.size}
       title={`文章评论（${props.commentCount ?? '-'}）`}
       loading={initFetching.state.value}
       destroyOnHidden={true}

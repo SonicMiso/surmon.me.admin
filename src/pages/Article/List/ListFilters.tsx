@@ -80,7 +80,7 @@ export const ListFilters: React.FC<ListFiltersProps> = (props) => {
 
   return (
     <Flex justify="space-between" align="start" gap="middle" wrap>
-      <Space direction="vertical">
+      <Space orientation="vertical">
         <Space wrap>
           <Button
             disabled={props.loading}

@@ -38,7 +38,7 @@ export const EditForm: React.FC<EditFormProps> = (props) => {
       <Form.Item label="ID">
         <Space size="small">
           <Typography.Text copyable={true}>{props.feedback.id}</Typography.Text>
-          <Divider type="vertical" />
+          <Divider orientation="vertical" />
           <Typography.Text copyable={true}>{props.feedback._id}</Typography.Text>
         </Space>
       </Form.Item>
@@ -67,9 +67,9 @@ export const EditForm: React.FC<EditFormProps> = (props) => {
       </Form.Item>
       <Form.Item label="终端">
         <UniversalText text={parseBrowser(props.feedback.user_agent!)} placeholder="未知浏览器" />
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <UniversalText text={parseOS(props.feedback.user_agent!)} placeholder="未知系统" />
-        <Divider type="vertical" />
+        <Divider orientation="vertical" />
         <UniversalText text={parseDevice(props.feedback.user_agent!)} placeholder="未知设备" />
       </Form.Item>
       <Form.Item label="反馈评分">

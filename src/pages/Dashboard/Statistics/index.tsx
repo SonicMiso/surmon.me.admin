@@ -41,7 +41,7 @@ export const getStatisticsCards = (statistics: Statistics | null, loading: boole
           <Link className={styles.link} to={RoutesPath[RoutesKey.Comment]}>
             管理评论
           </Link>
-          <Divider type="vertical" />
+          <Divider orientation="vertical" />
           <Link className={styles.link} to={RoutesPath[RoutesKey.Comment] + '?post_id=0'}>
             查看留言
           </Link>

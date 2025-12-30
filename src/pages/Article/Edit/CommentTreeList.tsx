@@ -24,9 +24,9 @@ export const CommentTreeList: React.FC<CommentTreeListProps> = (props) => {
         <List.Item>
           <Flex align="flex-start" gap="large">
             <div style={{ marginTop: 'var(--app-padding)' }}>
-              <CommentAvatar size="large" comment={comment} />
+              <CommentAvatar size={46} comment={comment} />
             </div>
-            <Space direction="vertical" style={{ flex: 1 }}>
+            <Space orientation="vertical" size="small" style={{ flex: 1 }}>
               <Flex justify="space-between">
                 <div>
                   {comment.author.site ? (
@@ -42,11 +42,11 @@ export const CommentTreeList: React.FC<CommentTreeListProps> = (props) => {
                   ) : (
                     <Typography.Text strong>{comment.author.name}</Typography.Text>
                   )}
-                  <Divider type="vertical" />
+                  <Divider orientation="vertical" />
                   <Typography.Text type="secondary">
                     <IPLocation key="ip-location" data={comment.ip_location} />
                   </Typography.Text>
-                  <Divider type="vertical" />
+                  <Divider orientation="vertical" />
                   <Typography.Text type="secondary">
                     {stringToYMD(comment.created_at!)}
                   </Typography.Text>

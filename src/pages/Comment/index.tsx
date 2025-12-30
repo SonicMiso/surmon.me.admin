@@ -227,7 +227,7 @@ export const CommentPage: React.FC = () => {
         onClickPostId={resetFiltersToPostId}
       />
       <Drawer
-        width="46rem"
+        size="large"
         title="评论详情"
         destroyOnHidden={true}
         open={isEditDrawerOpen.value}

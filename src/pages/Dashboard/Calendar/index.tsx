@@ -116,7 +116,7 @@ export const CalendarCard: React.FC<CalendarCardProps> = (props) => {
             <Button onClick={() => selectDataRange(dayjs().subtract(1, 'year'))}>最近一年</Button>
             <Button onClick={selectAllData}>全部视图</Button>
           </Space.Compact>
-          <Divider type="vertical" />
+          <Divider orientation="vertical" />
           {props.cardExtra}
         </Space>
       }

@@ -24,7 +24,7 @@ const renderVoteListItem = (vote: Vote) => {
           key: 'user',
           label: '用户',
           children: (
-            <Space direction="vertical">
+            <Space orientation="vertical">
               <Popover
                 title="用户数据"
                 placement="right"
@@ -85,7 +85,7 @@ const renderVoteListItem = (vote: Vote) => {
 }
 
 export interface VoteDrawerProps {
-  width?: DrawerProps['width']
+  size?: DrawerProps['size']
   open: boolean
   articleId: number
   likeCount: number
@@ -137,7 +137,7 @@ export const VoteDrawer: React.FC<VoteDrawerProps> = (props) => {
 
   return (
     <Drawer
-      width={props.width}
+      size={props.size}
       title={`文章获赞记录（${props.likeCount ?? '-'}）`}
       loading={initFetching.state.value}
       destroyOnHidden={true}

@@ -113,7 +113,7 @@ export const ArticleEditPage: React.FC = () => {
             content: (
               <Space size="small">
                 <Typography.Text>{article.value?.id ?? '-'}</Typography.Text>
-                <Divider type="vertical" />
+                <Divider orientation="vertical" />
                 <Typography.Text>{article.value?._id ?? '-'}</Typography.Text>
               </Space>
             )
@@ -144,7 +144,7 @@ export const ArticleEditPage: React.FC = () => {
                 {article.value?.meta?.comments ?? ''} 评论
               </Button>
             </Space.Compact>
-            <Divider type="vertical" />
+            <Divider orientation="vertical" />
             <Tooltip title={getBlogArticleUrl(article.value?.id!)}>
               <Button
                 size="small"
@@ -158,7 +158,7 @@ export const ArticleEditPage: React.FC = () => {
                 打开
               </Button>
             </Tooltip>
-            <Divider type="vertical" />
+            <Divider orientation="vertical" />
             <Button
               type="dashed"
               size="small"
@@ -176,14 +176,14 @@ export const ArticleEditPage: React.FC = () => {
       {article.value && (
         <>
           <VoteDrawer
-            width="48rem"
+            size="large"
             open={isVoteDrawerOpen.value}
             likeCount={article.value.meta!.likes}
             articleId={article.value.id!}
             onClose={() => (isVoteDrawerOpen.value = false)}
           />
           <CommentDrawer
-            width="68rem"
+            size="large"
             open={isCommentDrawerOpen.value}
             commentCount={article.value.meta!.comments}
             articleId={article.value.id!}

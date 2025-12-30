@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+### 3.8.0 (2025-12-30)
+
+- Upgraded react to v19.
+- Upgraded antd to v6.
+- Upgraded echarts to v6.
+
 ### 3.4.0 (2025-06-16)
 
 - Upgrade all dependencies to their latest versions.

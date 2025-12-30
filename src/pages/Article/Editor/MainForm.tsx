@@ -1,7 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { useRef } from 'veact'
-import { Button, Form, Select, Input, Modal } from 'antd'
+import { Button, Form, Select, Input, Modal, Space } from 'antd'
 import type { FormInstance } from 'antd'
 import * as Icons from '@ant-design/icons'
 import { FileManager } from '@/components/common/FileManager'
@@ -51,11 +51,7 @@ export const MainForm: React.FC<MainFormProps> = (props) => {
             }
           ]}
         >
-          <Input
-            addonBefore={BLOG_ARTICLE_URL_PREFIX}
-            placeholder="article-title"
-            allowClear={true}
-          />
+          <Input placeholder="article-slug" prefix={BLOG_ARTICLE_URL_PREFIX} allowClear={true} />
         </Form.Item>
         <Form.Item
           label="标题"

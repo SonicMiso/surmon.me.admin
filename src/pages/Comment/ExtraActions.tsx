@@ -75,9 +75,9 @@ export const ExtraActions: React.FC<ExtraActionsProps> = (props) => {
             }}
           >
             TODO: {ipLocationTask.todo.length}
-            <Divider type="vertical" />
+            <Divider orientation="vertical" />
             DONE: {ipLocationTask.done.length}
-            <Divider type="vertical" />
+            <Divider orientation="vertical" />
             FAIL: {ipLocationTask.fail.length}
           </Button>
         )}

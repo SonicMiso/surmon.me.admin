@@ -75,7 +75,7 @@ export const FormModal: React.FC<FormModalProps> = (props) => {
             <Form.Item label="ID">
               <Space size="small">
                 <Typography.Text copyable={true}>{props.initData.id}</Typography.Text>
-                <Divider type="vertical" />
+                <Divider orientation="vertical" />
                 <Typography.Text copyable={true}>{props.initData._id}</Typography.Text>
               </Space>
             </Form.Item>
