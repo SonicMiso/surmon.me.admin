@@ -48,14 +48,9 @@ export const AppLayout: React.FC<React.PropsWithChildren> = (props) => {
         </Layout.Content>
         <Layout.Footer className={styles.appFooter}>
           <Space size="small">
-            <Icons.CodeOutlined />
-            Powered by
-            <Typography.Link target="_blank" href="https://github.com/facebook/react">
-              React
-            </Typography.Link>
-            &
-            <Typography.Link target="_blank" href="https://github.com/veactjs/veact">
-              Veact
+            <Icons.CopyrightOutlined />
+            <Typography.Link strong target="_blank" href="https://github.com/surmon-china">
+              Surmon
             </Typography.Link>
           </Space>
         </Layout.Footer>
