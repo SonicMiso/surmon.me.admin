@@ -14,13 +14,13 @@
 
 **适用于 [surmon.me](https://github.com/surmon-china/surmon.me) 的博客后台管理系统，使用 [`React`](https://github.com/facebook/react) 和 [`Veact`](https://github.com/veactjs/veact) 进行开发。**
 
-**在线预览：[Online Demo](https://github.surmon.me/surmon.me.admin)**
+**在线预览 [Online Demo](https://github.surmon.me/surmon.me.admin)**
 
-**其他 [相关项目](https://github.com/stars/surmon-china/lists/surmon-me)：**
+**相关项目 [Related Projects](https://github.com/stars/surmon-china/lists/surmon-me)**
 
-- **[NodePress](https://github.com/surmon-china/nodepress)** - RESTful API service (CMS core) | 博客服务端
-- **[surmon.me](https://github.com/surmon-china/surmon.me)** - SSR blog website | 博客前端
-- **[surmon.me.native](https://github.com/surmon-china/surmon.me.native)** - Blog native app | 博客 App
+- **[NodePress](https://github.com/surmon-china/nodepress)** - RESTful API service (CMS core).
+- **[surmon.me](https://github.com/surmon-china/surmon.me)** - SSR blog website
+- **[surmon.me.native](https://github.com/surmon-china/surmon.me.native)** - Blog native app
 
 ## Screenshot
 
