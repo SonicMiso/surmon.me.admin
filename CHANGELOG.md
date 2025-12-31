@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+### 3.9.0 (2025-12-31)
+
+- Rename project name to `surmon.me.admin`.
+
 ### 3.8.0 (2025-12-30)
 
 - Upgraded react to v19.

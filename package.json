@@ -1,12 +1,12 @@
 {
-  "name": "surmon.admin",
-  "version": "3.8.0",
+  "name": "surmon.me.admin",
+  "version": "3.9.0",
   "author": "Surmon",
   "license": "MIT",
-  "homepage": "https://github.com/surmon-china/surmon.admin",
+  "homepage": "https://github.com/surmon-china/surmon.me.admin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/surmon-china/surmon.admin.git"
+    "url": "https://github.com/surmon-china/surmon.me.admin.git"
   },
   "type": "module",
   "scripts": {
