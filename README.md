@@ -10,17 +10,15 @@
 &nbsp;
 [![GitHub license](https://img.shields.io/github/license/surmon-china/surmon.me.admin.svg?style=for-the-badge)](/LICENSE)
 
-Admin client for [surmon.me](https://github.com/surmon-china/surmon.me) blog, powered by [`React`](https://github.com/facebook/react) and [`Veact`](https://github.com/veactjs/veact).
+**Admin panel for [surmon.me](https://github.com/surmon-china/surmon.me), built with [`React`](https://github.com/facebook/react) and [`Veact`](https://github.com/veactjs/veact).**
 
-**适用于 [surmon.me](https://github.com/surmon-china/surmon.me) 博客的管理员后台应用，使用 [`React`](https://github.com/facebook/react) 和 [`Veact`](https://github.com/veactjs/veact) 进行开发。**
+**适用于 [surmon.me](https://github.com/surmon-china/surmon.me) 的博客后台管理系统，使用 [`React`](https://github.com/facebook/react) 和 [`Veact`](https://github.com/veactjs/veact) 进行开发。**
 
-**在线预览：[Online demo site](https://github.surmon.me/surmon.me.admin)**
-
----
+**在线预览：[Online Demo](https://github.surmon.me/surmon.me.admin)**
 
 **其他 [相关项目](https://github.com/stars/surmon-china/lists/surmon-me)：**
 
-- **[nodepress](https://github.com/surmon-china/nodepress)** - RESTful API service for blog | 博客服务端
+- **[NodePress](https://github.com/surmon-china/nodepress)** - RESTful API service (CMS core) | 博客服务端
 - **[surmon.me](https://github.com/surmon-china/surmon.me)** - SSR blog website | 博客前端
 - **[surmon.me.native](https://github.com/surmon-china/surmon.me.native)** - Blog native app | 博客 App
 
