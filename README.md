@@ -10,9 +10,9 @@
 &nbsp;
 [![GitHub license](https://img.shields.io/github/license/surmon-china/surmon.me.admin.svg?style=for-the-badge)](/LICENSE)
 
-**Admin panel for [surmon.me](https://github.com/surmon-china/surmon.me), built with [`React`](https://github.com/facebook/react) and [`Veact`](https://github.com/veactjs/veact).**
+**Admin panel for [surmon.me](https://github.com/surmon-china/surmon.me), built with [React](https://github.com/facebook/react) and [Veact](https://github.com/veactjs/veact).**
 
-**适用于 [surmon.me](https://github.com/surmon-china/surmon.me) 的博客后台管理系统，使用 [`React`](https://github.com/facebook/react) 和 [`Veact`](https://github.com/veactjs/veact) 进行开发。**
+**适用于 [surmon.me](https://github.com/surmon-china/surmon.me) 的博客后台管理系统，使用 [React](https://github.com/facebook/react) 和 [Veact](https://github.com/veactjs/veact) 进行开发。**
 
 **在线预览：[Online Demo](https://github.surmon.me/surmon.me.admin)**
 
