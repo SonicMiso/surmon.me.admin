@@ -80,7 +80,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
         },
         {
           title: '个人信息',
-          width: 260,
+          width: 220,
           dataIndex: 'author',
           render(_, comment) {
             return (
@@ -116,7 +116,7 @@ export const TableList: React.FC<TableListProps> = (props) => {
         {
           title: '终端信息',
           dataIndex: 'agent',
-          minWidth: 200,
+          minWidth: 220,
           render(_, comment) {
             return (
               <Space orientation="vertical">
@@ -148,7 +148,9 @@ export const TableList: React.FC<TableListProps> = (props) => {
                       </div>
                     }
                   >
-                    {parseBrowser(comment.agent)}
+                    {parseBrowser(comment.agent) ||
+                      parseOS(comment.agent) ||
+                      parseDevice(comment.agent)}
                   </Popover>
                 </Space>
               </Space>

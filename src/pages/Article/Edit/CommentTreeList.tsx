@@ -70,13 +70,13 @@ export const CommentTreeList: React.FC<CommentTreeListProps> = (props) => {
                 </Typography.Text>
                 <UniversalText
                   type="secondary"
-                  placeholder="未知浏览器"
+                  placeholder="-"
                   small={true}
                   text={parseBrowser(comment.agent!)}
                 />
                 <UniversalText
                   type="secondary"
-                  placeholder="未知系统"
+                  placeholder="-"
                   small={true}
                   text={parseOS(comment.agent!)}
                 />

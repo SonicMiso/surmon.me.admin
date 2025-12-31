@@ -46,7 +46,7 @@ export interface RequestParams {
 export const nodepress = axios.create({
   baseURL: API_URL,
   // MARK: WORKAROUND for demo site
-  adapter: (window as any).__axiosAdapter || undefined
+  adapter: (window as any).__axiosAdapter || void 0
 })
 
 // request interceptor
