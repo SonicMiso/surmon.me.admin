@@ -170,11 +170,15 @@ export const TableList: React.FC<TableListProps> = (props) => {
                   getArticlePublish(article.state),
                   getArticlePublic(article.public),
                   getArticleOrigin(article.origin)
-                ].map((state) => (
-                  <Tag icon={state.icon} color={state.color} key={state.id + state.name}>
-                    {state.name}
-                  </Tag>
-                ))}
+                ].map((state) =>
+                  state ? (
+                    <Tag icon={state.icon} color={state.color} key={state.id + state.name}>
+                      {state.name}
+                    </Tag>
+                  ) : (
+                    '-'
+                  )
+                )}
               </Space>
             )
           }
