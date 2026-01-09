@@ -29,7 +29,6 @@ export const EditorToolbar: React.FC<EditorToolbarProps> = (props) => {
         </Typography.Text>
         <Button
           size="small"
-          disabled={props.disbaled}
           icon={<Icons.DownloadOutlined />}
           onClick={props.onPressSaveContent}
         />
@@ -39,7 +38,6 @@ export const EditorToolbar: React.FC<EditorToolbarProps> = (props) => {
         {props.language === UnEditorLanguage.Markdown && (
           <Button
             size="small"
-            disabled={props.disbaled}
             icon={props.isPreviewing ? <Icons.EyeInvisibleOutlined /> : <Icons.EyeOutlined />}
             onClick={() => props.onPreviewingChange?.(!props.isPreviewing)}
           />
@@ -57,7 +55,6 @@ export const EditorToolbar: React.FC<EditorToolbarProps> = (props) => {
         />
         <Button
           size="small"
-          disabled={props.disbaled}
           icon={
             props.isFullscreen ? <Icons.FullscreenExitOutlined /> : <Icons.FullscreenOutlined />
           }
