@@ -30,6 +30,13 @@ export function getArticles(params: GetArticleParams = {}) {
     .then((response) => response.result)
 }
 
+/** 获取全量文章 */
+export function getAllArticles() {
+  return nodepress
+    .get<Array<Article>>(`${ARTICLE_API_PATH}/all`)
+    .then((response) => response.result)
+}
+
 /** 获取文章详情 */
 export function getArticle(articleId: ArticleId) {
   return nodepress
