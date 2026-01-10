@@ -1,10 +1,11 @@
 import React from 'react'
-import { useShallowRef, useReactive, useComputed } from 'veact'
 import { useLoading } from 'veact-use'
-import { Button, Row, Divider, Modal, Checkbox, Flex, Typography } from 'antd'
+import { useShallowRef, useReactive, useComputed } from 'veact'
+import { Button, Row, Flex, Divider, Modal, Checkbox, Typography, Tabs } from 'antd'
 import * as Icons from '@ant-design/icons'
 import * as api from '@/apis/system'
 import { getAllArticles } from '@/apis/article'
+import { getBlogArticleUrl } from '@/transforms/url'
 import { Article, ArticlePublic, ArticlePublish } from '@/constants/article'
 import { UniversalEditor, UnEditorLanguage } from '@/components/common/UniversalEditor'
 
@@ -47,6 +48,28 @@ export const ActionsForm: React.FC = () => {
 
   const filteredArticlesJsonString = useComputed(() => {
     return JSON.stringify(filteredArticles.value, null, 2)
+  })
+
+  const filteredArticlesMarkdown = useComputed(() => {
+    return filteredArticles.value
+      .map((article) => {
+        return [
+          `# ${article.title}`,
+          ``,
+          `## 文章信息`,
+          `- 分类：${article.categories.map((c) => c.name || c.slug).join(', ')}`,
+          `- 标签：${article.tags.map((t) => t.name || t.slug).join(', ')}`,
+          `- 引言：${article.description?.replace(/\n/g, ' ').trim() || '暂无引言'}`,
+          `- 发布时间：${new Date(article.created_at!).toLocaleString('zh-CN', { hour12: false })}`,
+          `- 原文链接：${getBlogArticleUrl(article.id!)}`,
+          ``,
+          `## 正文内容`,
+          `${article.content}`
+        ]
+          .join('\n')
+          .trim()
+      })
+      .join('\n\n-----\n\n')
   })
 
   const handleArticlesPublicOnlyChange = (value: boolean) => {
@@ -94,8 +117,8 @@ export const ActionsForm: React.FC = () => {
         导出全量文章数据
       </Button>
       <Modal
-        title="全量文章数据"
-        width="70%"
+        title="导出全量文章数据"
+        width="80%"
         footer={null}
         maskClosable={false}
         loading={articlesLoading.state.value}
@@ -115,16 +138,44 @@ export const ActionsForm: React.FC = () => {
           </Typography.Text>
         </Flex>
         <Divider />
-        <UniversalEditor
-          rows={24}
-          value={filteredArticlesJsonString.value}
-          eid="app-export-all-articles"
-          placeholder="全站全量文章数据"
-          disbaled={true}
-          defaultLanguage={UnEditorLanguage.JSON}
-          disabledLanguageSelect={true}
-          disabledCacheDraft={true}
-          disabledLineNumbers={true}
+        <Tabs
+          size="middle"
+          items={[
+            {
+              key: 'json',
+              icon: <Icons.FileOutlined />,
+              label: 'JSON 格式原始数据',
+              children: (
+                <UniversalEditor
+                  rows={24}
+                  value={filteredArticlesJsonString.value}
+                  eid="app-all-articles-json"
+                  defaultLanguage={UnEditorLanguage.JSON}
+                  disabledLanguageSelect={false}
+                  disabledCacheDraft={true}
+                  disabledLineNumbers={true}
+                  disbaled={true}
+                />
+              )
+            },
+            {
+              key: 'llm-friendly-markdown',
+              icon: <Icons.OpenAIOutlined />,
+              label: 'LLM 友好的 Markdown 格式数据',
+              children: (
+                <UniversalEditor
+                  rows={24}
+                  value={filteredArticlesMarkdown.value}
+                  eid="app-all-articles-markdown"
+                  defaultLanguage={UnEditorLanguage.Markdown}
+                  disabledLanguageSelect={false}
+                  disabledCacheDraft={true}
+                  disabledLineNumbers={true}
+                  disbaled={true}
+                />
+              )
+            }
+          ]}
         />
       </Modal>
     </Row>
