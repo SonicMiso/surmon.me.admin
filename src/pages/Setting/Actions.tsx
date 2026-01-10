@@ -1,7 +1,7 @@
 import React from 'react'
 import { useShallowRef, useReactive, useComputed } from 'veact'
 import { useLoading } from 'veact-use'
-import { Button, Row, Divider, Modal, Checkbox } from 'antd'
+import { Button, Row, Divider, Modal, Checkbox, Flex, Typography } from 'antd'
 import * as Icons from '@ant-design/icons'
 import * as api from '@/apis/system'
 import { getAllArticles } from '@/apis/article'
@@ -35,15 +35,18 @@ export const ActionsForm: React.FC = () => {
     publicOnly: true
   })
 
-  const filteredArticlesJsonString = useComputed(() => {
-    let articles = articlesData.value
+  const filteredArticles = useComputed(() => {
     if (articlesState.publicOnly) {
-      articles = articles.filter(
-        (a) => a.state === ArticlePublish.Published && a.public === ArticlePublic.Public
-      )
+      return articlesData.value.filter((a) => {
+        return a.state === ArticlePublish.Published && a.public === ArticlePublic.Public
+      })
+    } else {
+      return articlesData.value
     }
+  })
 
-    return JSON.stringify(articles, null, 2)
+  const filteredArticlesJsonString = useComputed(() => {
+    return JSON.stringify(filteredArticles.value, null, 2)
   })
 
   const handleArticlesPublicOnlyChange = (value: boolean) => {
@@ -100,12 +103,17 @@ export const ActionsForm: React.FC = () => {
         onCancel={closeExportArticlesModal}
       >
         <Divider />
-        <Checkbox
-          checked={articlesState.publicOnly}
-          onChange={(event) => handleArticlesPublicOnlyChange(event.target.checked)}
-        >
-          仅保留公开文章数据（state = published; public = public）
-        </Checkbox>
+        <Flex justify="space-between">
+          <Checkbox
+            checked={articlesState.publicOnly}
+            onChange={(event) => handleArticlesPublicOnlyChange(event.target.checked)}
+          >
+            仅保留公开文章数据（State = Published; Public = Public）
+          </Checkbox>
+          <Typography.Text strong={articlesState.publicOnly} disabled={!articlesState.publicOnly}>
+            已过滤 {articlesData.value.length - filteredArticles.value.length} 条非公开数据
+          </Typography.Text>
+        </Flex>
         <Divider />
         <UniversalEditor
           rows={24}
