@@ -23,6 +23,6 @@ export interface Option {
     keywords: string[]
   }
   friend_links: GeneralKeyValue[]
-  ad_config: string
+  app_config: string
   updated_at: string
 }

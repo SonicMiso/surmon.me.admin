@@ -25,7 +25,7 @@ export const GeneralForm: React.FC<GeneralFormProps> = (props) => {
     data.value = option
     form.setFieldsValue({
       ...option,
-      ad_config: formatJSONString(option.ad_config, 2)
+      app_config: formatJSONString(option.app_config, 2)
     })
   }
 
@@ -36,7 +36,7 @@ export const GeneralForm: React.FC<GeneralFormProps> = (props) => {
   const updateOption = (newOption: Option) => {
     const payload = {
       ...newOption,
-      ad_config: formatJSONString(newOption.ad_config)
+      app_config: formatJSONString(newOption.app_config)
     }
     return updating.promise(api.putOption(payload)).then(resetForm)
   }
@@ -123,7 +123,7 @@ export const GeneralForm: React.FC<GeneralFormProps> = (props) => {
         <Form.Item name="statement" label="站点声明">
           <UniversalEditor
             rows={26}
-            eid="app-statement"
+            eid="app-setting-statement"
             placeholder="输入 Markdown 内容作为站点声明"
             defaultLanguage={UnEditorLanguage.Markdown}
             disabledLanguageSelect={true}
@@ -156,8 +156,9 @@ export const GeneralForm: React.FC<GeneralFormProps> = (props) => {
           <Select placeholder="回车以输入多个关键字" mode="tags" />
         </Form.Item>
         <Form.Item
-          name="ad_config"
-          label="AD CONFIG"
+          name="app_config"
+          label="APP CONFIG"
+          extra="站点综合配置，用于给各处的不同客户端消费"
           rules={[
             {
               message: '请输入合法的 JSON 数据',
@@ -174,8 +175,8 @@ export const GeneralForm: React.FC<GeneralFormProps> = (props) => {
         >
           <UniversalEditor
             rows={24}
-            eid="app-ad-config"
-            placeholder="站点广告配置，JSON 格式"
+            eid="app-setting-json-config"
+            placeholder="{ some_config: ... }"
             defaultLanguage={UnEditorLanguage.JSON}
             disabledCacheDraft={true}
             disabledLineNumbers={true}

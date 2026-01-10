@@ -1,6 +1,6 @@
 {
   "name": "surmon.me.admin",
-  "version": "3.9.2",
+  "version": "3.10.0",
   "author": "Surmon",
   "license": "MIT",
   "homepage": "https://github.com/surmon-china/surmon.me.admin",
@@ -65,10 +65,10 @@
     "eslint-config-prettier": "^10.x",
     "eslint-plugin-prettier": "^5.x",
     "eslint-plugin-react": "^7.x",
-    "globals": "^16.x",
+    "globals": "^17.x",
     "less": "^4.5.x",
     "prettier": "^3.x",
-    "typescript": "^5.8.x",
+    "typescript": "^5.9.x",
     "typescript-eslint": "^8.x",
     "vite": "^7.x"
   }

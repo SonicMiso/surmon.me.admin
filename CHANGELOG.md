@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+### 3.10.0 (2026-01-10)
+
+- Added all article export feature to the Setting page.
+- Renamed Setting page `option` field `ad_config` to `app_config`.
+
 ### 3.9.0 (2025-12-31)
 
 - Rename project name to `surmon.me.admin`.
